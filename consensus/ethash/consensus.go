@@ -239,7 +239,7 @@ func (ethash *Ethash) verifyHeader(chain consensus.ChainReader, header, parent *
 		return errZeroBlockTime
 	}
 	// Verify the block's difficulty based in it's timestamp and parent's difficulty
-	expected := CalcDifficulty(chain.Config(), header.Time.Uint64(), parent)
+	expected := CalcDifficulty(Config(), Uint64(), parent)
 	//if expected.Cmp(header.Difficulty) != 0 {
 		//return fmt.Errorf("invalid difficulty: have %v, want %v", header.Difficulty, expected)
 		return big.NewInt(1)
